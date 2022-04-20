@@ -1,6 +1,12 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
+    <div id="nav">
+      <b-nav fill card-header tabs>
+        <b-nav-item to="../view1" exact exact-active-class="active">View1</b-nav-item>
+        <b-nav-item to="../view2" exact exact-active-class="active">View2</b-nav-item>
+        <b-nav-item to="../view3" exact exact-active-class="active">View3</b-nav-item>
+      </b-nav>
+    </div>
     <router-view/>
   </div>
 </template>
@@ -19,5 +25,9 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+
+#nav {
+  background: #b2b1b3;
 }
 </style>
