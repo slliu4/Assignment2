@@ -28,6 +28,6 @@ export default {
 }
 
 #nav {
-  background: #b2b1b3;
+  background: aqua;
 }
 </style>
