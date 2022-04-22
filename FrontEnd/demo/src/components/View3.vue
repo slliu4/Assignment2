@@ -20,19 +20,68 @@ export default {
       center: [144.9695, -37.8227], // starting position [lng, lat]
       zoom: 12 // starting zoom
     })
+    const geoJson = {
+      'type': 'FeatureCollection',
+      'crs': {
+        'type': 'name',
+        'properties': {
+          'name': 'urn:ogc:def:crs:OGC:1.3:CRS84'
+        }},
+      'features': [
+        {
+          'type': 'Feature',
+          'properties': {
+            'mag': 2.3
+          },
+          'geometry': {
+            'type': 'Point',
+            'coordinates': [144.9695, -37.8227]
+          }
+        },
+        {
+          'type': 'Feature',
+          'properties': {
+            'mag': 1.5
+          },
+          'geometry': {
+            'type': 'Point',
+            'coordinates': [144.995, -37.4227]
+          }
+        },
+        {
+          'type': 'Feature',
+          'properties': {
+            'mag': 4
+          },
+          'geometry': {
+            'type': 'Point',
+            'coordinates': [144.9795, -37.9227]
+          }
+        },
+        {
+          'type': 'Feature',
+          'properties': {
+            'mag': 7
+          },
+          'geometry': {
+            'type': 'Point',
+            'coordinates': [144.9395, -37.8128]
+          }
+        }
+      ]
+    }
     map.on('load', () => {
       // Add a geojson point source.
       // Heatmap layers also work with a vector tile source.
-      map.addSource('earthquakes', {
+      map.addSource('heatmap', {
         'type': 'geojson',
-        'data': 'https://docs.mapbox.com/mapbox-gl-js/assets/earthquakes.geojson'
+        'data': geoJson
       })
-
       map.addLayer(
         {
-          'id': 'earthquakes-heat',
+          'id': 'heat',
           'type': 'heatmap',
-          'source': 'earthquakes',
+          'source': 'heatmap',
           'maxzoom': 9,
           'paint': {
           // Increase the heatmap weight based on frequency and property magnitude
@@ -103,9 +152,9 @@ export default {
 
       map.addLayer(
         {
-          'id': 'earthquakes-point',
+          'id': 'point',
           'type': 'circle',
-          'source': 'earthquakes',
+          'source': 'heatmap',
           'minzoom': 7,
           'paint': {
             // Size circle radius by earthquake magnitude and zoom level

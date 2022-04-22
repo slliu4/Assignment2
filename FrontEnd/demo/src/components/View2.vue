@@ -29,7 +29,7 @@ export default {
             'type': 'Feature',
             'properties': {
               'description':
-                '<strong>abc</strong><img src="../assets/logo.png" width="200px" height="200px">'
+                '<strong>abc</strong><img src="https://pbs.twimg.com/media/EYeX7akWsAIP1_1.jpg" width="200px">'
             },
             'geometry': {
               'type': 'Point',
@@ -40,7 +40,7 @@ export default {
             'type': 'Feature',
             'properties': {
               'description':
-                '<strong>Mad Men Season Five Finale Watch Party</strong><p>Head to Lounge 201 (201 Massachusetts Avenue NE) Sunday for a Mad Men Season Five Finale Watch Party, complete with 60s costume contest, Mad Men trivia, and retro food and drink. 8:00-11:00 p.m. $10 general admission, $20 admission and two hour open bar.</p>'
+                '<strong>Mad Men Season Five Finale Watch Party</strong>'
             },
             'geometry': {
               'type': 'Point',
@@ -51,7 +51,7 @@ export default {
             'type': 'Feature',
             'properties': {
               'description':
-                '<strong>Big Backyard Beach Bash and Wine Fest</strong><p>EatBar (2761 Washington Boulevard Arlington VA) is throwing a Big Backyard Beach Bash and Wine Fest on Saturday, serving up conch fritters, fish tacos and crab sliders, and Red Apron hot dogs. 12:00-3:00 p.m. $25.</p>'
+                '<strong>Big Backyard Beach Bash and Wine Fest</strong>'
             },
             'geometry': {
               'type': 'Point',
@@ -62,7 +62,7 @@ export default {
             'type': 'Feature',
             'properties': {
               'description':
-                '<strong>Ballston Arts & Crafts Market</strong><p>The Ballston Arts & Crafts Market sets up shop next to the Ballston metro this Saturday for the first of five dates this summer. Nearly 35 artists and crafters will be on hand selling their wares. 10:00-4:00 p.m.</p>'
+                '<strong>Ballston Arts & Crafts Market</strong>'
             },
             'geometry': {
               'type': 'Point',
@@ -73,7 +73,7 @@ export default {
             'type': 'Feature',
             'properties': {
               'description':
-                "<strong>Seersucker Bike Ride and Social</strong><p>Feeling dandy? Get fancy, grab your bike, and take part in this year's Seersucker Social bike ride from Dandies and Quaintrelles. After the ride enjoy a lawn party at Hillwood with jazz, cocktails, paper hat-making, and more. 11:00-7:00 p.m.</p>"
+                '<strong>Seersucker Bike Ride and Social</strong>'
             },
             'geometry': {
               'type': 'Point',
@@ -118,7 +118,6 @@ export default {
         // based on the feature found.
         popup.setLngLat(coordinates).setHTML(description).addTo(map)
       })
-
       map.on('mouseleave', 'places', () => {
         map.getCanvas().style.cursor = ''
         popup.remove()
